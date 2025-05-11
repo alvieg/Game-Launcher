@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>About:Blank Launcher</title>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron"/>
+</head>
+<body>
+<div class="title">
+<h1><strong>Type in a URL and click open</strong></h1>
+</div>
+<div class="container">
+<div class="opener">
+<input type="url" id="urlbox" name="url" placeholder="https://example.com" class="urlbox">
+<button onclick="openInNewTab()" class="openbutton" id="openbutton">Open</button>
+</div>
+<div class="linkslist">
+<p class="listtitle"><strong>Copy and paste these links into the bar</strong></p>
+<ul class="links" id="links">
+<li>https://thegportal.neocities.org</li>
+body {
+font-family: Orbitron, sans-serif;
+background: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80);
+background-position: center;
+background-size: cover;
+background-repeat: repeat;
+font-style: smallcaps;
+color: white;
+}
+.title {
+font-size: 30px;
+text-align: center;
+transition: 0.3s;
+}
+.title:hover {
+transform: scale(1.1);
+color: wheat;
+}
+button {
+position: center;
+background-color: dodgerblue;
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 8px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add shadow */
+transition: 0.3s ease-in;
+}
+function openInNewTab(URL) {
+var win = window.open();
+win.document.body.style.margin = '0';
+win.document.body.style.height = '100vh';
+var iframe = win.document.createElement('embed');
+iframe.style.border = 'none';
+iframe.style.width = '100%';
+iframe.style.height = '100%';
+iframe.style.margin = '0';
+var url = document.getElementById('urlbox').value
+if (!url.startsWith('https://')) {
+url = 'https://' + url
+}
+iframe.src = url;
+win.document.body.appendChild(iframe);
+var script = win.document.createElement('script');
+script.innerHTML = "setTimeout(() => { location.reload(true); }, 10800 * 1000);";
+win.document.body.appendChild(script);
+window.close();
+console.log(url)
+}
+setTimeout(() => {
+redirect("${url}");
+}, 2500);
+<li>https://burger-awesome.neocities.org</li>
+</ul>
+</div>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
