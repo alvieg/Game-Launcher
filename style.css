@@ -11,6 +11,7 @@ color: white;
 font-size: 48px;
 text-align: center;
 transition: 0.3s;
+font-family: Orbitron, sans-serif;
 }
 .title:hover {
 transform: scale(1.1);
@@ -45,13 +46,13 @@ padding: 13px;
 border: 2px solid dodgerblue;
 border-radius: 5px;
 font-size: 16px;
-transition: 0.3s;
+transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 input:focus {
 border-color: deepskyblue;
 box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 outline: none;
-padding: 12px;
+padding: 15px;
 font-size: 18px;
 }
 input::placeholder {
@@ -78,5 +79,5 @@ color: wheat;
 transform: rotate(1deg);
 }
 ul {
-list-style-type: none;
+list-style: none;
 }
