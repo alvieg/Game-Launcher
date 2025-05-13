@@ -1,3 +1,27 @@
+const exampleLinks = [
+  "thegportal.neocities.org",
+  "burgerawesome.neocities.org",
+];
+const list = document.getElementById('links');
+//<li>thegportal.neocities.org</li>
+const listItems = document.querySelectorAll('#links li');
+const inputBar = document.getElementById('urlbox');
+function addToBar(TEXT) {
+  var clickedItem = document.getElementById(TEXT)
+}
+
+exampleLinks.forEach(exampleLinks => {
+      const listItem = document.createElement('li'); // Create a new <li> element
+      listItem.textContent = exampleLinks; // Set the text content
+      listItem.onclick = () => addToBar(exampleLinks)
+      list.appendChild(listItem); // Append the <li> to the <ul>
+});
+function checkHTTP(VAR, id) {
+let VAR = document.GetElementById(id).value;
+if (!VAR.startsWith('https://')) {
+VAR = "https://" + VAR;
+}
+}
 function openInNewTab(URL) {
 var win = window.open();
 win.document.body.style.margin = '0';
@@ -7,10 +31,7 @@ iframe.style.border = 'none';
 iframe.style.width = '100%';
 iframe.style.height = '100%';
 iframe.style.margin = '0';
-var url = document.getElementById('urlbox').value
-if (!url.startsWith('https://')) {
-url = 'https://' + url
-}
+checkHTTP(url, urlbox)
 iframe.src = url;
 win.document.body.appendChild(iframe);
 var script = win.document.createElement('script');
@@ -20,12 +41,5 @@ window.close();
 console.log(url)
 }
 setTimeout(() => {
-redirect("${url}");
+openInNewTab("${url}");
 }, 2500);
-document.addEventListener('DOMContentLoaded', () => {
-const listItems = document.querySelectorAll('#links li');
-const inputBox = document.getElementById('urlbox');
-listItems.forEach(item => {
-item.addEventListener('click', () => {
-inputBox.value = item.textContent;
-});
