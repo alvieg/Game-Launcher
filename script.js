@@ -16,8 +16,7 @@ exampleLinks.forEach(exampleLinks => {
       listItem.onclick = () => addToBar(exampleLinks)
       list.appendChild(listItem); // Append the <li> to the <ul>
 });
-function checkHTTP(VAR, id) {
-let VAR = document.GetElementById(id).value;
+function checkHTTP(VAR) {
 if (!VAR.startsWith('https://')) {
 VAR = "https://" + VAR;
 }
@@ -31,7 +30,10 @@ iframe.style.border = 'none';
 iframe.style.width = '100%';
 iframe.style.height = '100%';
 iframe.style.margin = '0';
-checkHTTP(url, urlbox)
+var url = document.getElementById('urlbox').value;
+if (!url.startsWith('https://')) {
+url = "https://" + url;
+};
 iframe.src = url;
 win.document.body.appendChild(iframe);
 var script = win.document.createElement('script');
