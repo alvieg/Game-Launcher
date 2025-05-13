@@ -73,10 +73,28 @@ font-size:18px;
 justify-content: center;
 text-align: center;
 transition: 0.3s ease-in;
+position: relative;
+text-decoration: none;
+}
+.links li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: wheat;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .25s linear;
 }
 .links li:hover {
 color: wheat;
 transform: rotate(1deg);
+text-decoration: underline;
+}
+.links li:hover::after {
+    transform: scaleX(1);
 }
 ul {
 list-style: none;
