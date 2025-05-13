@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>About:Blank Cloaker</title>
-<link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron"/>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 <div class="title">
@@ -16,16 +15,15 @@
 <div class="container">
 <div class="opener">
 <input type="url" id="urlbox" name="url" placeholder="https://example.com" class="urlbox">
-<button onclick="openInNewTab()" class="openbutton" id="openbutton">Open</button>
+<button onclick="openInNewTab()" class="openbutton" id="openbutton" for="url">Open</button>
 </div>
 <div class="linkslist">
 <p class="listtitle"><strong>Copy and paste these links into the bar</strong></p>
-<ul class="links" id="links">
-<li>https://thegportal.neocities.org</li>
-<li>https://burger-awesome.neocities.org</li>
+<ul class="links" id="links" onclick="addToBar()">
+<!--filled by JS example links-->
 </ul>
 </div>
 </div>
-<script src="scripts.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
