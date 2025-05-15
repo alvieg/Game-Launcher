@@ -10,18 +10,15 @@
 </head>
 <body>
 <div class="title">
-<h1><strong>Type in a URL and click open</strong></h1>
+<h1><strong>Click one of the buttons</strong></h1>
+</div>
+<div class="explanation">
+<h2>If you want a website thats not in the individual game page use the URL Cloaker</h2>
 </div>
 <div class="container">
-<div class="opener">
-<input type="url" id="urlbox" name="url" placeholder="https://example.com" class="urlbox">
-<button onclick="openInNewTab()" class="openbutton" id="openbutton" for="url">Open</button>
-</div>
-<div class="linkslist">
-<p class="listtitle"><strong>Copy and paste these links into the bar</strong></p>
-<ul class="links" id="links" onclick="addToBar()">
-<!--filled by JS example links-->
-</ul>
+<div class="btns">
+<button class="individualgamesbtn" onclick="window.location.href='gamebuttons.html';">Individual Games</button>
+<button class="urlcloakerbtn" onclick="window.location.href='urlcloak.html';">URL Cloaker</button>
 </div>
 </div>
 <script src="script.js"></script>
