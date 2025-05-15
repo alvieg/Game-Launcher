@@ -6,6 +6,23 @@ background-size: cover;
 background-repeat: repeat;
 font-style: smallcaps;
 color: white;
+animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 .title {
 font-size: 48px;
@@ -35,7 +52,29 @@ cursor: pointer;
 border-radius: 8px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Add shadow */
 transition: 0.3s ease-in;
+overflow: hidden;
+outline: none;
 }
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: none;
+  border-radius: 8px;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+button:hover::before {
+  width: 120%;
+  height: 120%;
+  border: 2px solid wheat
+}
+
 button:hover {
 background-color: deepskyblue;
 color: wheat;
@@ -82,7 +121,7 @@ text-decoration: none;
     bottom: 0;
     left: 0;
     height: 2px;
-    width: 50%;
+    width: 100%;
     background-color: wheat;
     transform: scaleX(0);
     transform-origin: center;
@@ -91,11 +130,74 @@ text-decoration: none;
 .links li:hover {
 color: wheat;
 transform: rotate(1deg);
-text-decoration: underline;
 }
 .links li:hover::after {
     transform: scaleX(1);
 }
 ul {
 list-style: none;
+}
+.explanation {
+display: flex;
+flex-direction: column;
+text-align: center;
+font-family: Orbitron, sans-serif;
+}
+.footer {
+text-decoration: none;
+color: dodgerblue;
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+.footer:hover{
+    color: deepskyblue;
+}
+.footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background-color: deepskyblue;
+    transition: all .25s ease;
+    transform: translateX(-50%);
+}
+.footer:hover::after {
+    width: 100%;
+}
+.footer {
+align-items: center;
+}
+.btns button{
+font-size:18px;
+justify-content: center;
+text-align: center;
+transition: 0.3s ease-in;
+position: relative;
+text-decoration: none;
+padding: 15px;
+border-radius: 8px;
+background-color: dodgerblue;
+margin: 4px, 2px;
+}
+.btns button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: wheat;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .25s linear;
+}
+.btns button:hover {
+color: wheat;
+transform: scale(1.1);
+}
+.btns button:hover::after {
+    transform: scaleX(1);
 }
