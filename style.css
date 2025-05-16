@@ -7,6 +7,7 @@ background-repeat: repeat;
 font-style: smallcaps;
 color: white;
 animation: fadeIn 1s ease-in-out;
+overflow: hidden;
 }
 @keyframes fadeIn {
     from {
