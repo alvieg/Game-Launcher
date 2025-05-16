@@ -14,7 +14,27 @@ for (const [key, value] of Object.entries(gameButtons)) {
   button.onclick = () => redirect(value)
   gameSpace.appendChild(button)
 }
+ function createIframe() {
+            var url = document.getElementById("urlbox").value;
+            if (!url.startsWith("https://")) {
+                url = "https://" + url
+            }
+            if (url) {
+                let iframe = document.createElement("embed");
+                iframe.src = url;
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.border = "none";
+                iframe.style.margin = "0"
+                iframe.id = "iframe";
+                iframe.className = "iframe";
 
+                var container = document.getElementById("iframeContainer");
+                container.innerHTML = ""; // Clear previous iframe
+                container.appendChild(iframe);
+
+            }
+        }
 function checkHTTP(VAR) {
 if (!VAR.startsWith('https://')) {
 VAR = "https://" + VAR;
